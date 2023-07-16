@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-style {
+    @apply border-4 border-black w-60 py-2 text-2xl;
+  }
+}
