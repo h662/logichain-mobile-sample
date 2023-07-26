@@ -34,7 +34,7 @@ const NftCard: FC<NftCardProps> = ({ tokenId }) => {
   }, []);
 
   return (
-    <li className="flex border-2 border-black p-2 rounded-md gap-2">
+    <li className="w-full flex border border-black p-2 rounded-md gap-2">
       {metadata && (
         <>
           <Image
@@ -43,8 +43,10 @@ const NftCard: FC<NftCardProps> = ({ tokenId }) => {
             height={150}
             alt={metadata.name}
           />
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col mx-4">
+            <div className="mt-2 text-xs text-gray-500">Name</div>
             <div>{metadata.name}</div>
+            <div className="mt-4 text-xs text-gray-500">Description</div>
             <div>{metadata.description}</div>
           </div>
         </>

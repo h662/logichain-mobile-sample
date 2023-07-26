@@ -22,20 +22,25 @@ const Header: FC = () => {
   };
 
   return (
-    <header className="absolute top-0 right-0 m-4">
-      {account ? (
-        <button className="border-2 border-black px-2 py-1">
-          Welcome! {account.substring(0, 4)}...
-          {account.substring(account.length - 4)}
-        </button>
-      ) : (
-        <button
-          className="border-2 border-black px-2 py-1"
-          onClick={onClickLogIn}
-        >
-          🦊 MetaMask
-        </button>
-      )}
+    <header className="bg-main px-4 py-2 flex justify-between items-center ">
+      <div className="text-white tracking-wider font-semibold">
+        Track chain 문서 인식기
+      </div>
+      <div className="text-xs">
+        {account ? (
+          <button className="btn-style-reverse px-4">
+            Welcome! {account.substring(0, 4)}...
+            {account.substring(account.length - 4)}
+          </button>
+        ) : (
+          <button
+            className="btn-style-reverse font-semibold px-4"
+            onClick={onClickLogIn}
+          >
+            🦊 MetaMask
+          </button>
+        )}
+      </div>
     </header>
   );
 };

@@ -9,9 +9,7 @@ interface BackButtonProps {
 const BackButton: FC<BackButtonProps> = ({ href, pageName }) => {
   return (
     <Link href={href}>
-      <button className="font-bold absolute top-0 left-0 m-4">
-        〈 {pageName}
-      </button>
+      <button className="font-bold">〈 {pageName}</button>
     </Link>
   );
 };

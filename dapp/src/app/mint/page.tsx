@@ -141,43 +141,46 @@ const MyNft: NextPage = () => {
   return (
     <>
       {isLoading ? (
-        <div className="text-3xl">Loading...</div>
+        <div>Loading...</div>
       ) : (
         <>
           <BackButton href="/" pageName="Back" />
 
           {jsonHash ? (
             <div className="flex flex-col gap-4 items-center">
-              <div className="text-2xl">IPFS upload is successful.</div>
-              <button className="btn-style" onClick={onClickMint}>
+              <div>IPFS upload is successful.</div>
+              <button className="btn-style px-4" onClick={onClickMint}>
                 Mint
               </button>
             </div>
           ) : (
-            <form className="flex flex-col gap-4" onSubmit={onSubmitIpfs}>
+            <form className="flex flex-col" onSubmit={onSubmitIpfs}>
+              <div className="text-xs text-gray-500">1. Name</div>
+              <input
+                className="input-style mb-4"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <div className="text-xs text-gray-500">2. Description</div>
+              <input
+                className="input-style mb-4"
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+              <div className="text-xs text-gray-500">3. Image</div>
               <label
-                className="btn-style text-center truncate px-2"
+                className="btn-style text-center truncate mb-8"
                 htmlFor="imageFile"
               >
-                {imageFile ? imageFile.name : "Choose image."}
+                {imageFile ? imageFile.name : "Choose image"}
               </label>
               <input
                 className="hidden"
                 id="imageFile"
                 type="file"
                 onChange={onChangeImageFile}
-              />
-              <input
-                className="btn-style px-2"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <input
-                className="btn-style px-2"
-                type="text"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
               />
               <input className="btn-style" type="submit" value="Upload IPFS" />
             </form>

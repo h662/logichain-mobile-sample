@@ -47,9 +47,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </head>
       <body className={inter.className}>
         <AppProvider>
-          <div className="max-w-screen-md mx-auto relative">
+          <div className="max-w-screen-sm mx-auto relative">
             <Header />
-            <main className="min-h-screen flex flex-col justify-center items-center gap-8">
+            <main className="min-h-screen flex flex-col justify-start items-start gap-8 p-8">
               {children}
             </main>
           </div>

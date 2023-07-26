@@ -4,6 +4,12 @@
 
 @layer components {
   .btn-style {
-    @apply border-4 border-black w-60 py-2 text-2xl;
+    @apply py-2 bg-main text-white rounded-md;
+  }
+  .btn-style-reverse {
+    @apply py-2 bg-white text-main rounded-md;
+  }
+  .input-style {
+    @apply px-4 py-2 border-2 border-purple-300 focus:outline-main rounded-md;
   }
 }

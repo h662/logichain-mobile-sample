@@ -35,16 +35,13 @@ const MyNft: NextPage = () => {
     <>
       <BackButton href="/" pageName="Back" />
       {account ? (
-        <ul>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center">
           {tokenIds?.reverse().map((v, i) => (
             <NftCard key={i} tokenId={v} />
           ))}
         </ul>
       ) : (
-        <div className="text-2xl text-center">
-          <div>Not Connected</div>
-          <div className="mt-4">🦊MetaMask Wallet!</div>
-        </div>
+        <div>Not Connected 🦊MetaMask Wallet!</div>
       )}
     </>
   );
